@@ -18,7 +18,7 @@ class NoopCalculator extends AbstractCalculator
 
     protected function doAccumulate(SocialPostTo $postTo): void
     {
-        $monthKey = $postTo->getDate()->format('\M\o\n\t\h m, Y');
+        $monthKey = $postTo->getDate()->format('M, Y');
         $userKey = $postTo->getAuthorId();
 
         $this->totals[$monthKey][$userKey] = ($this->totals[$monthKey][$userKey] ?? 0) + 1;
